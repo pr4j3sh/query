@@ -1,0 +1,18 @@
+<h1>your feed</h1>
+
+<%= form_with(model: Post.new, local: true, id: "post-form") do |form| %>
+    <%= form.label :content, "what's on your mind?" %>
+    <%= form.text_area :content, id: "post_content" %>
+    <%= form.submit "post" %>
+<% end %>
+
+<h2>posts</h2>
+<% if @posts.present? %>
+  <% @posts.each do |post| %>
+    <div>
+      <p><strong><%= post.user.email %></strong>: <%= post.content %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>No posts available.</p>
+<% end %>
