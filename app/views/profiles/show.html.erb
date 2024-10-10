@@ -1,0 +1,8 @@
+<h1 class="text-balance text-3xl font-bold tracking-tight">your profile</h1>
+
+<p><strong>Email:</strong> <%= current_user.email %></p>
+<p><strong>Joined:</strong> <%= current_user.created_at.strftime('%B %d, %Y') %></p>
+<div class="flex items-center gap-x-2">
+<%= link_to 'edit', edit_profile_path, class: 'rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' %>
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600" %>
+</div>

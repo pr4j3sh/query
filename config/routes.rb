@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "profiles/show"
   root 'home#index'
 
   devise_for :users, controllers: {sessions: 'users/sessions'}
@@ -7,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'feed', to: 'feed#index'
 
+  resources :users, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update]
+
+  get 'profile', to: 'profiles#show'
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check

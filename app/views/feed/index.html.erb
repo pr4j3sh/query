@@ -1,4 +1,4 @@
-<h1>your feed</h1>
+<h1 class="text-balance text-3xl font-bold tracking-tight">your feed</h1>
 
 <%= form_with(model: Post.new, local: true, id: "post-form") do |form| %>
     <%= form.label :content, "what's on your mind?" %>
@@ -6,7 +6,6 @@
     <%= form.submit "post" %>
 <% end %>
 
-<h2>posts</h2>
 <% if @posts.present? %>
   <% @posts.each do |post| %>
     <div>
