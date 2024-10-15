@@ -7,8 +7,6 @@ const application = Application.start();
 application.debug = false;
 window.Stimulus = application;
 
-console.log("hi");
-
 document.addEventListener("DOMContentLoaded", () => {
   validatePostForm();
 });

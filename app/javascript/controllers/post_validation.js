@@ -7,7 +7,7 @@ const validatePostForm = () => {
 
       if (!content.trim()) {
         event.preventDefault();
-        alert("Content cannot be blank.");
+        alert("content cannot be blank.");
       }
     });
   }
