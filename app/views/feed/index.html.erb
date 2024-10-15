@@ -2,14 +2,15 @@
 
 <%= form_with(model: Post.new, local: true, id: "post-form") do |form| %>
     <%= form.label :content, "what's on your mind?" %>
-    <%= form.text_area :content, id: "post_content" %>
-    <%= form.submit "post" %>
+    <%= form.text_area :content, id: "post_content", required: true, class: 'rounded-md w-full'  %>
+    <%= form.submit "post", class: 'rounded-md bg-indigo-100 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' %>
 <% end %>
 
 <% if @posts.present? %>
   <% @posts.each do |post| %>
     <div>
-      <p><strong><%= post.user.email %></strong>: <%= post.content %></p>
+      <p class="text-sm"><%= post.user.email %> @ <%= post.created_at.strftime('%b %d, %Y') %> </p>
+      <p class=""><%= post.content %></p>
     </div>
   <% end %>
 <% else %>
