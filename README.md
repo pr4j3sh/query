@@ -1,3 +1,3 @@
-# walls
+# query
 
-> wallpapers
+> query
